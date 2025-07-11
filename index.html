@@ -3,6 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <title>Invitación Boda -</title>
+  <script>
+    var global_fecha = "Nov 15, 2025 21:00:00";
+    var emailjs_public_key = "YQbByRYPUgF6MrvCe";
+    var emailjs_service_id = "service_rpoakwi";
+    var emailjs_template_id = "template_qrisy5o";
+  </script>
   <style>
     body {
       font-family: 'Georgia', serif;
@@ -11,7 +17,6 @@
       padding: 0;
       color: #333;
     }
-
     .container {
       max-width: 600px;
       margin: 40px auto;
@@ -21,30 +26,25 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       text-align: center;
     }
-
     h1 {
       font-size: 2em;
       color: #a15f5f;
     }
-
     .photos {
       display: flex;
       justify-content: space-between;
       margin: 20px 0;
     }
-
     .photos img {
       width: 48%;
       border-radius: 10px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
-
     .invitation-text {
       font-size: 1.1em;
       margin: 20px 0;
       line-height: 1.5;
     }
-
     input[type="text"] {
       padding: 10px;
       font-size: 1em;
@@ -53,7 +53,6 @@
       width: 80%;
       margin-bottom: 10px;
     }
-
     button {
       background: #a15f5f;
       color: white;
@@ -63,7 +62,6 @@
       font-size: 1em;
       cursor: pointer;
     }
-
     .result {
       margin-top: 15px;
       font-weight: bold;
@@ -89,193 +87,192 @@
       padding: 20px;
       margin-bottom: 20px;
     }
-  .icon {
-    width: 50px;
-    height: 50px;
-    display: inline-block;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-  .countdown {
-    font-family: 'Arial', sans-serif;
-  }
-  #countdown {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  h2 {
-    font-size: 3em;
-    margin-bottom: 10px;
-    color: #6A6033;
-    font-family: 'Arial', sans-serif;
-  }
-  .timer {
-    margin: 0 10px; /* Add horizontal spacing between timer elements */
-  }
-  .timer h3 {
-    font-size: 3em;
-    margin-bottom: 0;
-  }
-  .timer p {
-    margin-top: 0;
-  }
-  .day {
-    height: 100px;
-    position: relative;
-    margin-top: 40px;
-  }
-  .day:before {
-    position: absolute;
-    content: '\2022';
-    top: 10px;
-    left: 0px;
-  }
-  .day:after {
-    position: absolute;
-    content: '\2022';
-    top: 10px;
-    right: 0px;
-  }
-  .form-radio {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 80px; /* Optional: Add space between radio buttons */
-    margin-bottom: 50px;
-    margin-top: 50px;
-  }
-  .modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    padding-top: 100px;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0,0.4);
-    border-radius: 16px;
-    overflow: hidden;
-  }
-  .modal-content {
-    background-color: #fefefe;
-    margin: auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-  }
+    .icon {
+      width: 50px;
+      height: 50px;
+      display: inline-block;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    .countdown {
+      font-family: 'Arial', sans-serif;
+    }
+    #countdown {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    h2 {
+      font-size: 3em;
+      margin-bottom: 10px;
+      color: #6A6033;
+      font-family: 'Arial', sans-serif;
+    }
+    .timer {
+      margin: 0 10px; /* Add horizontal spacing between timer elements */
+    }
+    .timer h3 {
+      font-size: 3em;
+      margin-bottom: 0;
+    }
+    .timer p {
+      margin-top: 0;
+    }
+    .day {
+      height: 100px;
+      position: relative;
+      margin-top: 40px;
+    }
+    .day:before {
+      position: absolute;
+      content: '\2022';
+      top: 10px;
+      left: 0px;
+    }
+    .day:after {
+      position: absolute;
+      content: '\2022';
+      top: 10px;
+      right: 0px;
+    }
+    .form-radio {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 80px; /* Optional: Add space between radio buttons */
+      margin-bottom: 50px;
+      margin-top: 50px;
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      padding-top: 100px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgb(0,0,0);
+      background-color: rgba(0,0,0,0.4);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+    .modal-content {
+      background-color: #fefefe;
+      margin: auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+    }
 
-  .close {
-    color: #aaaaaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-  }
+    .close {
+      color: #aaaaaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
 
-  .close:hover,
-  .close:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-  }
-  h2{
-    margin: 8px
-  }
-  textarea {
-    width: 80%;
-    height: 200px;
-    padding: 10px;
-    box-sizing: border-box;
-    border: 2px solid #ccc;
-    border-radius: 8px;
-    font-size: 16px;
-    resize: none;
-    margin: 0 auto;
-  }
-  footer {
-    background-color: #4B4A3F;
-    padding: 30px;
-    color: white;
-    text-align: center;
-    
-  }
-  footer .btn {
-    margin-top: 20px;
-    background-color: #211E10;
-  }
+    .close:hover,
+    .close:focus {
+      color: #000;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    h2{
+      margin: 8px
+    }
+    textarea {
+      width: 80%;
+      height: 200px;
+      padding: 10px;
+      box-sizing: border-box;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+      resize: none;
+      margin: 0 auto;
+    }
+    footer {
+      background-color: #4B4A3F;
+      padding: 30px;
+      color: white;
+      text-align: center;
+      
+    }
+    footer .btn {
+      margin-top: 20px;
+      background-color: #211E10;
+    }
   </style>
   <script type="text/javascript"
         src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
     </script>
   <script>
-    var countDownDate = new Date("Nov 15, 2025 21:00:00").getTime();
+    var countDownDate = new Date(global_fecha).getTime();
 
-// Update the count down every 1 second
-var x = setInterval(function() {
+    // Update the count down every 1 second
+    var x = setInterval(function() {
 
-  // Get today's date and time
-  var now = new Date().getTime();
+    // Get today's date and time
+    var now = new Date().getTime();
 
-  // Find the distance between now and the count down date
-  var distance = countDownDate - now;
+    // Find the distance between now and the count down date
+    var distance = countDownDate - now;
 
-  // Time calculations for days, hours, minutes and seconds
-  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    // Time calculations for days, hours, minutes and seconds
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-  // Display the result in the element with id="countdown"
-  document.getElementById("countdown").innerHTML = 
-    "<div class='timer'><h3>" +days + "</h3><p>Días</p></div>"+
-    "<div class='timer'><h3>" +hours + "</h3><p>Horas</p></div>"+
-    "<div class='timer'><h3>" +minutes + "</h3><p>Minutos</p></div>"+
-    "<div class='timer'><h3>" +seconds + "</h3><p>Segundos</p></div>";
+    // Display the result in the element with id="countdown"
+    document.getElementById("countdown").innerHTML = 
+      "<div class='timer'><h3>" +days + "</h3><p>Días</p></div>"+
+      "<div class='timer'><h3>" +hours + "</h3><p>Horas</p></div>"+
+      "<div class='timer'><h3>" +minutes + "</h3><p>Minutos</p></div>"+
+      "<div class='timer'><h3>" +seconds + "</h3><p>Segundos</p></div>";
 
-  // If the count down is finished, write some text
-  if (distance < 0) {
-    clearInterval(x);
-    document.getElementById("countdown").innerHTML = "ES LA FECHA!!!!";
-  }
-}, 1000);
-  function start() {
-    emailjs.init({
-      publicKey: "YQbByRYPUgF6MrvCe",
-    });
-    console.log('here');
-  }
-  function sendEmail() {
-    if(!document.getElementById('nombre').value || !document.querySelector('input[name="asistencia"]:checked')){
-      alert('Llena los datos primero');
-      return;
+    // If the count down is finished, write some text
+    if (distance < 0) {
+      clearInterval(x);
+      document.getElementById("countdown").innerHTML = "ES LA FECHA!!!!";
     }
-    var templateParams = {
-      title: "Invitación Boda",
-      name: document.getElementById('nombre').value,
-      message: document.getElementById('mensaje').value,
-      asistencia: document.querySelector('input[name="asistencia"]:checked').value,
-    };
+  }, 1000);
+    function start() {
+      emailjs.init({
+        publicKey: emailjs_public_key,
+      });
+    }
+    function sendEmail() {
+      if(!document.getElementById('nombre').value || !document.querySelector('input[name="asistencia"]:checked')){
+        alert('Llena los datos primero');
+        return;
+      }
+      var templateParams = {
+        titulo: "Invitación Boda",
+        nombre: document.getElementById('nombre').value,
+        mensaje: document.getElementById('mensaje').value,
+        asistencia: document.querySelector('input[name="asistencia"]:checked').value,
+      };
 
-    emailjs.send('service_rpoakwi', 'template_qrisy5o', templateParams).then(
-      (response) => {
-        console.log('SUCCESS!', response.status, response.text);
-        alert('Gracias por tu respuesta');
-      },
-      (error) => {
-        console.log('FAILED...', error);
-        alert('Hubo un error, intenta de nuevo');
-      },
-    );
-  }
+      emailjs.send(emailjs_service_id, emailjs_template_id, templateParams).then(
+        (response) => {
+          console.log('SUCCESS!', response.status, response.text);
+          alert('Gracias por tu respuesta');
+        },
+        (error) => {
+          console.log('FAILED...', error);
+          alert('Hubo un error, intenta de nuevo');
+        },
+      );
+    }
   </script>
-</head>
-<body onload="start()">
+  </head>
+  <body onload="start()">
   <div class="container">
-    <img src="assets/test1.jpg" alt="Portada">
+    <img src="assets/test1_.jpg" alt="Portada">
     
     <div class="music-player">
       <audio controls autoplay>
